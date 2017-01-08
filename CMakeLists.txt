@@ -138,7 +138,13 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
-#############
+add_executable(has_node src/odroid_HAS.cpp)
+add_dependencies(has_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(has_node
+  ${catkin_LIBRARIES}
+)
+
+############
 ## Install ##
 #############
 
